@@ -183,9 +183,9 @@ module.exports = function(grunt) {
     //  Run the default "grunt" task.
 
     // Build process
-    //  Run "grunt: build"
+    //  Run "grunt build"
 
-    /* Build "grunt" task
+    /* "Grunt Build" task
         1. Clean (Remove "live" folders)
         2. Concat CSS and JS files into single files
         3. Run autoprefixer on concatenated css file

@@ -1,0 +1,20 @@
+$font-path: "/src/fonts/";
+@font-face {
+    font-family: 'MochaMattari';
+    src: url('#{$font-path}/MochaMattari.eot'),
+         url('#{$font-path}/MochaMattari.woff') format('woff'),
+         url('#{$font-path}/MochaMattari.ttf') format('truetype'),
+         url('#{$font-path}/MochaMattari.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DinCondensedBold';
+    src: url('#{$font-path}/din-condensed-bold.eot'),
+         url('#{$font-path}/din-condensed-bold.woff') format('woff'),
+         url('#{$font-path}/din-condensed-bold.ttf') format('truetype'),
+         url('#{$font-path}/din-condensed-bold.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

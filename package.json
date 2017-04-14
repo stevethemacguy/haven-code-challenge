@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/stevethemacguy/haven-code-challenge#readme",
   "devDependencies": {
+    "autoprefixer": "^6.1.2",
     "grunt": "^1.0.1",
     "grunt-contrib-sass": "^1.0.0",
     "grunt-contrib-watch": "^1.0.0",

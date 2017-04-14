@@ -130,9 +130,22 @@ module.exports = function(grunt) {
 
         sass: {
             dist: {
-                files: {
-                    'style/style.css': 'sass/style.scss'
-                }
+                /*files: {
+                    'css/base.css': 'sass/base.scss',
+                    'css/variables.css': 'sass/variables.scss',
+                    'css/fonts.css': 'sass/fonts.scss',
+                    'css/main.css': 'sass/main.scss'
+                }*/
+                options: {
+                    update: true //Only update changed files
+                },
+                files: [{
+                    expand: true,
+                    cwd: 'src/sass',
+                    src: ['**/*.scss'],
+                    dest: 'src/sass/css',
+                    ext: '.css'
+                }]
             }
         },
 

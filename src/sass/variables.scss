@@ -20,3 +20,4 @@ $small: "only screen and (min-width: 480px)";    // Viewports 480px  (e.g. Mobil
 $medium: "only screen and (min-width: 768px)";   // Viewports 768px  (e.g. iPad Portrait) or Wider
 $large: "only screen and (min-width: 1024px)";   // Viewports 1024px (e.g. iPad Landscape) or Wider
 $desktop: "only screen and (min-width: 1200px)"; // Viewports 1200px (e.g. desktop) or Wider
+$tiny-only: "only screen and (max-width: 320px)";    // Viewports 480px  (e.g. Mobile devices in landscape) or Wider

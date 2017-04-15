@@ -80,19 +80,21 @@ header, .inner-box {
 .share {
     //Move share icons on top of the header on small screens
     position: absolute;
-    right: 22px;
+    right: 5px;
     top: -2px;
     width: 20%;
     height: 100%;
     @include flex-center;
 
+    @media #{$tiny-only} {
+        display: none;
+    }
+
     @media #{$medium} {
         width: calc(100% - #{$inner-box-width});
         position: static;
         justify-content: space-around;
-
     }
-
 }
 
 .fb-icon, .twitter-icon {
@@ -108,7 +110,7 @@ header, .inner-box {
 .fb-icon {
     background-image: url("#{$images}/vendor/facebook-icon.png");
     //Compensate for small difference in image size
-    background-size: 105%;
+    background-size: 102%;
 }
 
 .share-text {
@@ -130,6 +132,11 @@ header, .inner-box {
     flex-direction: column;
     margin-bottom: 35%;
     padding: 0 15px;
+    justify-content: space-between;
+
+    @media #{$tiny-only} {
+        padding: 0 8px;
+    }
 
     @media #{$large} {
         padding: 0;

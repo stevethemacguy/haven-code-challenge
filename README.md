@@ -9,7 +9,7 @@ Enter the following commands in Terminal
 
     `npm install`
     
-    `grunt`
+    `npm start`
 
 Grunt is used to watch and compile scss files during development. 
 The default grunt task uses BrowserSync to update the browser 

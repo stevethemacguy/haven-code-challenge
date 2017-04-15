@@ -48,10 +48,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-browser-sync');
 
-    // Dev Process
-    //  Run the default "grunt" task to:
+    // Run the default "grunt" task to:
     //    1. Watch and compile scss files as they change
     //    2. Run BrowserSync to update the browser when css and js files are changed
-
     grunt.registerTask('default', ['browserSync', 'watch']);
 };

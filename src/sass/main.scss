@@ -1,46 +1,53 @@
 @import "fonts";
+@import "mixins";
 @import "variables";
 
 html {
     box-sizing: border-box;
+    background: url("#{$images}/audience-background.png") no-repeat center center fixed;
+    background-size: cover;
+    font-size: 14px;
 }
 
 *, *:before, *:after {
     box-sizing: inherit;
 }
 
-html {
-    background: url("#{$images}/audience-background.png") no-repeat center center fixed;
-    background-size: cover;
-}
-
 body {
-    font-family: Helvetica, sans-serif;
+    //font-family: Helvetica, sans-serif;
+    font-family: DinCondensedBold, sans-serif;
     position: relative;
+    font-size: 1em;
 }
 
-.main-content {
-    position: relative;
-    margin: 0 auto;
-    max-width: 1135px;
-    width: 70.937%;
+.outer-container {
+    width: 100%;
+    height: 100vh;
+
+    @media #{$large} {
+        position: relative;
+        margin: 0 auto;
+        max-width: 1135px;
+        width: 70.937%;
+    }
 }
 
 .inner-box {
-    width: 85.463%;
+    width: $inner-box-width;
     max-width: 970px;
     height: 63px;
     background: $gnc-black;
     position: relative;
-    padding: 20px;
-    padding-top: 13px;
-    padding-bottom: 13px;
+    padding: 13px 20px;
+    display: flex;
+    align-items: center;
 }
 
 header {
-    height: 68px;
+    height: $header-height;
     background: $gnc-red;
     position: relative;
+    display: flex;
 }
 
 header, .inner-box {
@@ -49,4 +56,107 @@ header, .inner-box {
 
 .gnc-header-logo {
     height: 100%;
+}
+
+.live-nation {
+    margin-top: 3px;
+    background: url("#{$images}/live-nation.png");
+    height: 29px;
+    width: 112px;
+    margin-left: 23px;
+}
+
+.share {
+    @include flex-center;
+    width: calc(100% - #{$inner-box-width});
+    height: 100%;
+    justify-content: space-around;
+}
+
+.fb-icon, .twitter-icon {
+    max-width: 40px;
+    max-height: 40px;
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.fb-icon {
+    background-image: url("#{$images}/vendor/facebook-icon.png");
+    background-size: 100%;
+}
+
+.share-text {
+    color: $white;
+}
+
+.twitter-icon {
+    background-image: url("#{$images}/vendor/twitter-icon.png");
+    background-size: 100%;
+}
+
+.main-content {
+    font-size: 1.5em;
+    padding: 0 15px;
+    @media #{$large} {
+        margin-top: 45px;
+    }
+}
+
+.ticket-section, .form-section {
+    position: relative;
+    width: 100%;
+    height: calc(100% - #{$header-height});
+    @media #{$large} {
+        height: calc(568px - #{$header-height});
+        position: relative;
+        width: 48%;
+    }
+}
+
+.chance-to-win, .prize-winner {
+    margin: 20px 0;
+    font-size: 1.5rem;
+}
+
+.ticket-rock {
+    margin: 0 auto;
+    height: 197px;
+    background: url("#{$images}/ticket-to-rock-banner.png") no-repeat center center;
+    width: 90%;
+    background-size: contain;
+
+    @media #{$large} {
+        height: 197px;
+        background-size: 100%;
+    }
+}
+
+.prize-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.prize-item {
+    margin: 15px;
+}
+
+.prize-icon {
+    width: 38px;
+    height: 38px;
+    background-repeat: no-repeat;
+    display: inline-block;
+    vertical-align: middle;
+    &.ticket {
+        background-image: url("#{$images}/icons/airplane-icon.png");
+    }
+    &.airplane {
+        background-image: url("#{$images}/icons/airplane-icon.png");
+    }
+    &.cash {
+        background-image: url("#{$images}/icons/airplane-icon.png");
+    }
+
 }

@@ -39,7 +39,7 @@ body {
 }
 
 .inner-box {
-    width: $inner-box-width;
+    width: 100%;
     max-width: 970px;
     height: 63px;
     background: $gnc-black;
@@ -47,6 +47,11 @@ body {
     padding: 13px 20px;
     display: flex;
     align-items: center;
+
+    @media #{$medium} {
+        width: $inner-box-width;
+    }
+
 }
 
 header {
@@ -73,15 +78,27 @@ header, .inner-box {
 }
 
 .share {
-    @include flex-center;
-    width: calc(100% - #{$inner-box-width});
+    //Move share icons on top of the header on small screens
+    position: absolute;
+    right: 22px;
+    top: -2px;
+    width: 20%;
     height: 100%;
-    justify-content: space-around;
+    @include flex-center;
+
+    @media #{$medium} {
+        width: calc(100% - #{$inner-box-width});
+        position: static;
+        justify-content: space-around;
+
+    }
+
 }
 
 .fb-icon, .twitter-icon {
     max-width: 40px;
     max-height: 40px;
+    display: inline-block;
     height: 100%;
     width: 100%;
     background-repeat: no-repeat;
@@ -90,11 +107,16 @@ header, .inner-box {
 
 .fb-icon {
     background-image: url("#{$images}/vendor/facebook-icon.png");
-    background-size: 100%;
+    //Compensate for small difference in image size
+    background-size: 105%;
 }
 
 .share-text {
     color: $white;
+    display: none;
+    @media #{$large} {
+        display: inline-flex;
+    }
 }
 
 .twitter-icon {
@@ -104,25 +126,38 @@ header, .inner-box {
 
 .main-content {
     font-size: 1.5em;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 35%;
+    padding: 0 15px;
+
     @media #{$large} {
+        padding: 0;
+        margin-bottom: 0;
         margin-top: 45px;
+        flex-direction: row;
     }
 }
 
 .ticket-section, .form-section {
-    padding: 0 15px;
     position: relative;
     width: 100%;
     height: 100%;
+
     @media #{$large} {
         position: relative;
+        padding: 0;
         width: 48%;
     }
 }
 
 .chance-to-win, .prize-winner {
     margin: 20px 0;
-    font-size: 1.5rem;
+    font-size: 1em;
+
+    @media #{$large} {
+        font-size: 1.2em;
+    }
 }
 
 .ticket-rock {
@@ -133,6 +168,7 @@ header, .inner-box {
     background-size: contain;
 
     @media #{$large} {
+        margin: 0;
         height: 197px;
         background-size: 100%;
     }
@@ -146,14 +182,27 @@ header, .inner-box {
 
 .prize-item {
     margin: 15px;
+    margin-left: 0;
+    font-size: .8em;
+
+    @media #{$large} {
+        font-size: 1em;
+    }
 }
 
 .prize-icon {
+    background-size: 85%;
     width: 38px;
     height: 38px;
     background-repeat: no-repeat;
     display: inline-block;
     vertical-align: middle;
+    margin-right: 5px;
+
+    @media #{$large} {
+        background-size: 100%;
+    }
+
     &.ticket {
         background-image: url("#{$images}/icons/airplane-icon.png");
     }
@@ -180,4 +229,54 @@ footer {
     background-size: contain;
     position: fixed;
     bottom: calc(#{$footer-height} - 2px);
+}
+
+.form-section {
+    margin-top: 20px;
+    background: $white;
+    border-radius: 2px;
+    padding: 50px 25px 25px;
+
+    @media #{$large} {
+        margin-top: 10px;
+    }
+
+}
+
+.input-row {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    @media #{$large} {
+        flex-direction: row;
+    }
+
+    &.flex-start {
+        justify-content: flex-start;
+    }
+}
+
+.input-container {
+    font-size: .8em;
+    text-transform: uppercase;
+    position: relative;
+    width: 100%;
+    display: inline-block;
+    margin-bottom: 40px;
+
+    @media #{$large} {
+        width: 49%;
+    }
+
+    > label {
+        position: absolute;
+        top: -20px;
+    }
+    > input {
+        width: 100%;
+        color: $gnc-black;
+        height: 35px;
+        background: $gnc-light-grey;
+    }
 }

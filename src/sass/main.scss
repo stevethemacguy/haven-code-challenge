@@ -1,6 +1,24 @@
 @import "fonts";
 @import "variables";
 
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+html {
+    background: url("#{$images}/audience-background.png") no-repeat center center fixed;
+    background-size: cover;
+}
+
+body {
+    font-family: Helvetica, sans-serif;
+    position: relative;
+}
+
 .gnc-header-logo {
     width: 161px;
     height: 48px;

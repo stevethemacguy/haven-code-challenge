@@ -19,7 +19,34 @@ body {
     position: relative;
 }
 
+.main-content {
+    position: relative;
+    margin: 0 auto;
+    max-width: 1135px;
+    width: 70.937%;
+}
+
+.inner-box {
+    width: 85.463%;
+    max-width: 970px;
+    height: 63px;
+    background: $gnc-black;
+    position: relative;
+    padding: 20px;
+    padding-top: 13px;
+    padding-bottom: 13px;
+}
+
+header {
+    height: 68px;
+    background: $gnc-red;
+    position: relative;
+}
+
+header, .inner-box {
+    border-radius: 1px;
+}
+
 .gnc-header-logo {
-    width: 161px;
-    height: 48px;
+    height: 100%;
 }

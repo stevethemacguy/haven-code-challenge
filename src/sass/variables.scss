@@ -9,4 +9,35 @@ $gnc-red: #d71920;
 $gnc-dark-grey: #7A7C7D;
 $gnc-light-grey: #E6E5E6;
 
-//Media Queries
+// Responsive Media Queries
+//
+// This application uses a "mobile-first" approach. In other words, NO media query is used when targeting the smallest viewport.
+// For example:
+//
+// No media query (i.e. smallest viewports)
+// .some-class {
+//    ...all widths (e.g. mobile portrait)
+//
+//    @media ${$small} {
+//        ...small widths and wider
+//    }
+//
+//    @media ${$medium} {
+//        ...medium widths and wider
+//    }
+//
+//    @media ${$large} {
+//        ...large widths and wider
+//    }
+//
+//    @media ${$desktop} {
+//        ...desktop widths and wider
+//    }
+// }
+
+// SEE Notes above! When possible, use these variables instead creating new, custom media queries
+// For viewports below 480px (e.g. mobile devices in portrait mode), do NOT use a media query.
+$small: "only screen and (min-width: 480px)";    // Viewports 480px  (e.g. Mobile devices in landscape) or Wider
+$medium: "only screen and (min-width: 768px)";   // Viewports 768px  (e.g. iPad Portrait) or Wider
+$large: "only screen and (min-width: 1024px)";   // Viewports 1024px (e.g. iPad Landscape) or Wider
+$desktop: "only screen and (min-width: 1200px)"; // Viewports 1200px (e.g. desktop) or Wider

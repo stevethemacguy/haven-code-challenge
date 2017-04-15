@@ -1,3 +1,7 @@
+/**
+ * Author: Steven Dunn
+ * Date Created: April 15, 2017
+ **/
 @import "fonts";
 @import "mixins";
 @import "variables";
@@ -15,50 +19,46 @@ html {
 }
 
 body {
-    //font-family: Helvetica, sans-serif;
     font-family: DinCondensedBold, sans-serif;
-    position: relative;
     font-size: 1em;
-    width: 100%;
     min-height: 100vh;
-    //display: flex;
-    //flex-direction: column;
+    position: relative;
+    width: 100%;
 }
 
 .outer-container {
     width: 100%;
-    min-height: calc(100vh - #{$header-height} - #{$footer-height});
     height: calc(100vh - #{$header-height} - #{$footer-height});
+    min-height: calc(100vh - #{$header-height} - #{$footer-height});
 
     @media #{$large} {
-        position: relative;
         margin: 0 auto;
         max-width: 1135px;
+        position: relative;
         width: 70.937%;
     }
 }
 
 .inner-box {
-    width: 100%;
-    max-width: 970px;
-    height: 63px;
     background: $gnc-black;
-    position: relative;
-    padding: 13px 20px;
     display: flex;
     align-items: center;
+    height: 63px;
+    max-width: 970px;
+    padding: 13px 20px;
+    position: relative;
+    width: 100%;
 
     @media #{$medium} {
         width: $inner-box-width;
     }
-
 }
 
 header {
-    height: $header-height;
-    background: $gnc-red;
-    position: relative;
     display: flex;
+    background: $gnc-red;
+    height: $header-height;
+    position: relative;
 }
 
 header, .inner-box {
@@ -70,38 +70,39 @@ header, .inner-box {
 }
 
 .live-nation {
-    margin-top: 3px;
     background: url("#{$images}/live-nation.png");
     height: 29px;
-    width: 112px;
     margin-left: 23px;
+    margin-top: 3px;
+    width: 112px;
 }
 
 .share {
-    //Move share icons on top of the header on small screens
+    @include flex-center;
+
+    // Move share icons on top of the header on small screens
     position: absolute;
     right: 5px;
     top: -2px;
-    width: 20%;
     height: 100%;
-    @include flex-center;
+    width: 20%;
 
     @media #{$tiny-only} {
         display: none;
     }
 
     @media #{$medium} {
-        width: calc(100% - #{$inner-box-width});
-        position: static;
         justify-content: space-around;
+        position: static;
+        width: calc(100% - #{$inner-box-width});
     }
 }
 
 .fb-icon, .twitter-icon {
-    max-width: 40px;
-    max-height: 40px;
     display: inline-block;
     height: 100%;
+    max-height: 40px;
+    max-width: 40px;
     width: 100%;
     background-repeat: no-repeat;
     background-position: center center;
@@ -109,7 +110,7 @@ header, .inner-box {
 
 .fb-icon {
     background-image: url("#{$images}/vendor/facebook-icon.png");
-    //Compensate for small difference in image size
+    // Compensate for small difference in image size
     background-size: 102%;
 }
 
@@ -127,29 +128,29 @@ header, .inner-box {
 }
 
 .main-content {
-    font-size: 1.5em;
     display: flex;
     flex-direction: column;
-    margin-bottom: 35%;
-    padding: 0 15px;
     justify-content: space-between;
+    font-size: 1.5em;
+    padding: 0 15px;
+    margin-bottom: 35%;
 
     @media #{$tiny-only} {
         padding: 0 8px;
     }
 
     @media #{$large} {
+        flex-direction: row;
         padding: 0;
         margin-bottom: 0;
         margin-top: 45px;
-        flex-direction: row;
     }
 }
 
 .ticket-section, .form-section {
     position: relative;
-    width: 100%;
     height: 100%;
+    width: 100%;
 
     @media #{$large} {
         position: relative;
@@ -159,8 +160,8 @@ header, .inner-box {
 }
 
 .chance-to-win, .prize-winner {
-    margin: 20px 0;
     font-size: 1em;
+    margin: 20px 0;
 
     @media #{$large} {
         font-size: 1.2em;
@@ -168,29 +169,29 @@ header, .inner-box {
 }
 
 .ticket-rock {
-    margin: 0 auto;
-    height: 197px;
     background: url("#{$images}/ticket-to-rock-banner.png") no-repeat center center;
-    width: 85%;
     background-size: contain;
+    height: 197px;
+    margin: 0 auto;
+    width: 85%;
 
     @media #{$large} {
-        margin: 0;
-        height: 197px;
         background-size: 100%;
+        height: 197px;
+        margin: 0;
     }
 }
 
 .prize-list {
     list-style: none;
-    padding: 0;
     margin: 0;
+    padding: 0;
 }
 
 .prize-item {
+    font-size: .8em;
     margin: 15px;
     margin-left: 0;
-    font-size: .8em;
 
     @media #{$large} {
         font-size: 1em;
@@ -198,13 +199,13 @@ header, .inner-box {
 }
 
 .prize-icon {
-    background-size: 85%;
-    width: 38px;
-    height: 38px;
-    background-repeat: no-repeat;
     display: inline-block;
-    vertical-align: middle;
+    background-size: 85%;
+    background-repeat: no-repeat;
+    height: 38px;
     margin-right: 5px;
+    width: 38px;
+    vertical-align: middle;
 
     @media #{$large} {
         background-size: 100%;
@@ -222,11 +223,11 @@ header, .inner-box {
 }
 
 footer {
-    height: $footer-height;
-    width: 100%;
     background-color: #000;
+    height: $footer-height;
     position: fixed;
     bottom: 0;
+    width: 100%;
 }
 
 .crowd {
@@ -239,21 +240,20 @@ footer {
 }
 
 .form-section {
-    margin-top: 20px;
     background: $white;
     border-radius: 2px;
+    margin-top: 20px;
     padding: 50px 25px 25px;
 
     @media #{$large} {
         margin-top: 10px;
     }
-
 }
 
 .input-row {
     display: flex;
-    justify-content: space-between;
     flex-direction: column;
+    justify-content: space-between;
 
     @media #{$large} {
         flex-direction: row;
@@ -266,11 +266,11 @@ footer {
 
 .input-container {
     font-size: .8em;
-    text-transform: uppercase;
-    position: relative;
-    width: 100%;
     display: inline-block;
     margin-bottom: 40px;
+    position: relative;
+    text-transform: uppercase;
+    width: 100%;
 
     @media #{$large} {
         width: 49%;
@@ -280,10 +280,11 @@ footer {
         position: absolute;
         top: -20px;
     }
+
     > input {
-        width: 100%;
+        background: $gnc-light-grey;
         color: $gnc-black;
         height: 35px;
-        background: $gnc-light-grey;
+        width: 100%;
     }
 }

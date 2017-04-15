@@ -1,23 +1,27 @@
-//Base File Paths
+/**
+ * Author: Steven Dunn
+ * Date Created: April 15, 2017
+ **/
+
+// Base File Paths
 $fonts: "../../fonts";
 $images: "../../assets/images";
 
-//Colors
+// Colors
 $white: #fff;
 $gnc-black: #221715;
 $gnc-red: #d71920;
 $gnc-dark-grey: #7A7C7D;
 $gnc-light-grey: #E6E5E6;
 
-//Heights and Widths
+// Heights and Widths
 $inner-box-width: 85.463%;
 $header-height: 68px;
 $footer-height: 5%;
 
-// Media Queries
-// This application uses a "mobile-first" approach. In other words, NO media query is used when targeting the smallest viewport.
-$small: "only screen and (min-width: 480px)";    // Viewports 480px  (e.g. Mobile devices in landscape) or Wider
-$medium: "only screen and (min-width: 768px)";   // Viewports 768px  (e.g. iPad Portrait) or Wider
-$large: "only screen and (min-width: 1024px)";   // Viewports 1024px (e.g. iPad Landscape) or Wider
-$desktop: "only screen and (min-width: 1200px)"; // Viewports 1200px (e.g. desktop) or Wider
-$tiny-only: "only screen and (max-width: 320px)";    // Viewports 480px  (e.g. Mobile devices in landscape) or Wider
+// Media Queries. This application uses a "mobile-first" approach (i.e. the smallest viewport uses no media query).
+$small: "only screen and (min-width: 480px)";     // Viewports 480px  (e.g. Mobile devices in landscape) or Wider
+$medium: "only screen and (min-width: 768px)";    // Viewports 768px  (e.g. iPad Portrait) or Wider
+$large: "only screen and (min-width: 1024px)";    // Viewports 1024px (e.g. iPad Landscape) or Wider
+$desktop: "only screen and (min-width: 1200px)";  // Viewports 1200px (e.g. desktop) or Wider
+$tiny-only: "only screen and (max-width: 320px)"; // Viewports 320px or smaller

@@ -1,12 +1,15 @@
-module.exports = function(grunt) {
+/**
+ * Author: Steven Dunn
+ * Date Created: April 15, 2017
+ **/
 
-    //Configuration for all modules 
+module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         sass: {
             dist: {
                 options: {
-                    update: true //Only update changed files
+                    update: true // Only update changed files
                 },
                 files: [{
                     expand: true,
@@ -26,7 +29,7 @@ module.exports = function(grunt) {
         browserSync: {
             dev: {
                 bsFiles: {
-                    src : [
+                    src: [
                         'src/sass/css/*.css',
                         'src/scripts/*.js',
                         'index.html'
@@ -40,7 +43,7 @@ module.exports = function(grunt) {
         }
     });
 
-    //Load grunt modules
+    // Load grunt modules
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-browser-sync');
@@ -48,9 +51,7 @@ module.exports = function(grunt) {
     // Dev Process
     //  Run the default "grunt" task to:
     //    1. Watch and compile scss files as they change
-    //    2. Run BrowserSync, which uploads the browser when css and js files changes
-
-    // Running the code
+    //    2. Run BrowserSync to update the browser when css and js files are changed
 
     grunt.registerTask('default', ['browserSync', 'watch']);
 };
